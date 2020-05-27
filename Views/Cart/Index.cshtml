@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="ps-section--cart pt-100 pb-100">
+        <div class="container">
+          <div class="ps-cart-listing">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>All Products</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id='allCartItems'>
+                 
+                </tbody>
+              </table>
+            </div>
+            <div class="ps-cart__process">
+              <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 ">
+                      <div class="form-group form-group--icon ps-cart__promotion">
+                        <div class="icon-wrap"><i class="fa fa-angle-right"></i>
+                          <input id='voucherCode' class="form-control" type="text" placeholder="promotion code">
+                        </div>
+                      </div>
+                      <div class="form-groupform-order">
+                       <button onclick="location.href='/products'" class="ps-cart__shopping">Continue Shopping</button>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+                      <div class="ps-cart__total">
+                        <p>Total Price: <span id='totalCart'>0</span></p>
+                        <button onclick="checkPromotionCode()" class="ps-btn ps-btn--sm ps-btn--fullwidth">Process to checkout</button>
+                      </div>
+                    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<script>
+loadAllCartInfo()
+</script>

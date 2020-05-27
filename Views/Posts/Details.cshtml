@@ -1,0 +1,40 @@
+﻿@model uit_project_framework.Models.Post
+
+@{
+Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="ps-section--page-reverse">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 ">
+                <div class="ps-blog-detail pt-80 pb-80">
+                    <div class="ps-post">
+                        <div class="ps-post__thumbnail">
+                            <img src="@Html.DisplayFor(model=> model.Image)" alt=""></div>
+                        <div class="ps-post__header">
+                            <div class="ps-post__title">@Html.DisplayFor(model=> model.Title)</div>
+                            <div class="ps-post__meta">
+                                <span>
+                                    <i class="fa fa-calendar-check-o"></i>
+                                    @Html.DisplayFor(model=> model.CreatedAt)
+                                </span>
+
+
+                            </div>
+                        </div>
+                        <div class="ps-post__content">
+                            @Html.DisplayFor(model => model.Content)
+                        </div>
+                        
+                    </div>
+                    
+                    
+                   
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

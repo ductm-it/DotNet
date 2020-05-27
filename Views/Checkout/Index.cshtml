@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="ps-section--checkout pt-80 pb-80">
+        <div class="container">
+          <form  class="ps-checkout">
+            <div class="row">
+                  <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ">
+                    <div class="ps-checkout__billing">
+                      <h3>Billing Detail</h3>
+                          
+                          <div class="form-group">
+                            <label>Full Name<span>*</span>
+                            </label>
+                            <input required id='fullName' class="form-control" type="text">
+                          </div>
+                          
+                          <div class="form-group">
+                            <label>Email Address<span>*</span>
+                            </label>
+                            <input required id="email" class="form-control" type="email">
+                          </div>
+                          
+                          <div class="form-group">
+                            <label>Phone<span>*</span>
+                            </label>
+                            <input required id="phone" class="form-control" type="text">
+                          </div>
+                          <div class="form-group">
+                            <label>Address<span>*</span>
+                            </label>
+                            <input required id="address" class="form-control" type="text">
+                          </div>
+                      
+                      
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+                    <div class="ps-checkout__order">
+                      <h3>Your Order</h3>
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th class="text-uppercase">Product</th>
+                            <th class="text-uppercase">Total</th>
+                          </tr>
+                        </thead>
+                        <tbody id='paymentForm'>
+                         
+                        </tbody>
+                      </table>
+                      <h3>Payment Method</h3>
+                      <div class="form-group">
+                        <div class="radio">
+                          <label>
+                            <input checked type="radio" name="payment" value="0"> Pay when you received.
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label>
+                            <input type="radio" name="payment" value="1"> Momo
+                          </label>
+                          <div class="card-list"></div>
+                        </div>
+                      </div>
+                      <button type='button' onclick="confirmOrder()"  class="ps-btn ps-btn--sm">Place Order</button>
+                    </div>
+                  </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+<script>
+loadPaymentForm()
+</script>

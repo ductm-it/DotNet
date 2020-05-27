@@ -1,0 +1,58 @@
+﻿@model IEnumerable<uit_project_framework.Models.Post>
+
+@{
+    @using uit_project_framework.Models;
+
+    ViewData["Title"] = "post";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="page-wrap">
+    <div class="ps-section--page-reverse">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 ">
+                    <div class="pt-80 pb-80">
+                        @foreach (var item in Model)
+                        {
+                            <div class="ps-blog-listing">
+                                <div class="ps-post">
+                                    <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="blog-detail.html"></a><img src="@Html.DisplayFor(modelItem => item.Image)" alt="" height="825" width="440"></div>
+                                    <div class="ps-post__header">
+                                        <a class="ps-post__title" href="blog-detail.html"> @Html.DisplayFor(modelItem => item.Title)</a>
+                                        <div class="ps-post__meta">
+                                            <span><i class="fa fa-calendar-check-o"></i>@Html.DisplayFor(modelItem => item.CreatedAt)</span>
+
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="ps-post__content">
+                                        <p>@Html.DisplayFor(modelItem => item.Content)</p>
+                                    </div>
+                                    <footer class="ps-post__footer">
+                                        <a class="ps-btn ps-btn--sm ps-post__morelink" asp-action="Details" asp-route-id="@item.PostId">Read more</a>
+                                    </footer>
+                                </div>
+                            </div>
+                        }
+
+
+                        @*comment vì chưa fix được css của thanh số*@
+                        @*<div class="ps-pagination">
+                                <ul class="pagination">
+                                    <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
+                                    <li class="active"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#"><i class="fa fa-arrow-right"></i></a></li>
+                                </ul>
+                            </div>*@
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
